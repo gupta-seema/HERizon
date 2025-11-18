@@ -1,0 +1,2 @@
+# HERizon
+TNGSD a multi-agent service desk platform designed to revolutionize enterprise support (e.g., HR, IT, Finance) by intelligently managing and resolving inbound user requests. This system moves beyond traditional, reactive chatbots by deploying a team of specialized, cooperating AI agents. Its core function is to confidently automate repetitive tasks ("runbooks") while ensuring safety, transparency, and a seamless, graceful escalation to human experts for complex edge cases, thereby drastically reducing organizational backlog and improving employee satisfaction.

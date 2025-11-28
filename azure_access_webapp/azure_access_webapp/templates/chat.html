@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Access Agent Chat</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f7;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .chat-container {
+            width: 600px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .chat-messages {
+            padding: 15px;
+            flex-grow: 1;
+            overflow-y: auto;
+            max-height: 500px;
+        }
+
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-input input[type=text] {
+            flex-grow: 1;
+            padding: 12px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .chat-input button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .message {
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            word-wrap: break-word;
+            clear: both;
+        }
+
+        .user {
+            background-color: #DCF8C6;
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+        }
+
+        .access-agent {
+            background-color: #F1F0F0;
+            align-self: flex-start;
+            border-bottom-left-radius: 0;
+        }
+
+        .role-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">Access Agent Chat</div>
+
+        <div class="chat-messages" id="chat-messages">
+            {% for msg in conversation %}
+                <div class="message {{ msg.role }}">
+                    <div class="role-label">{{ msg.role.capitalize() }}</div>
+                    {{ msg.text }}
+                </div>
+            {% endfor %}
+        </div>
+
+        <form class="chat-input" method="POST">
+            <input type="text" name="message" placeholder="Type your message..." required autofocus>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+        // Scroll to bottom on page load
+        var chatMessages = document.getElementById("chat-messages");
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    </script>
+</body>
+</html>

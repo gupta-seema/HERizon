@@ -1,74 +1,77 @@
-# 🌐 **HERizon**
+🌐 HERizon
+Safe automation, seamless escalation, and the end of wait times
 
-### **Safe automation, seamless escalation, and the end of the wait time**
+HERizon is an enterprise-grade multi-agent security and automation platform built with Azure AI Foundry to modernize IT operations, eliminate backlog, and empower cybersecurity teams.
 
-HERizon is an enterprise-grade **multi-agent security and automation platform** designed to modernize IT operations, reduce backlog, and empower cybersecurity teams.
+It uses intelligent agent orchestration to:
 
-It uses **intelligent agent orchestration** to:
+Detect Shadow IT
 
-* Detect Shadow IT
-* Automate security actions
-* Score and map risks
-* Streamline access governance
-* Maintain human oversight for high-risk cases
+Automate security actions
 
-Built using **Azure AI Foundry**, HERizon delivers both **speed** and **safety** across enterprise workflows.
+Score and map risks
 
----
+Streamline access governance
 
-## 🚀 **Key Features**
+Maintain human oversight for high-risk cases
 
-### **1. Shadow IT Detection & Automated Remediation**
+HERizon brings speed, explainability, and enterprise safety to cloud security workflows.
 
-HERizon integrates with **Microsoft Defender** and analyzes security logs using a structured multi-agent workflow:
+🧩 HERizon Systems Overview
 
-| Agent                            | Purpose                                                              |
-| -------------------------------- | -------------------------------------------------------------------- |
-| **Defender Data Fetcher**        | Retrieves telemetry from Microsoft Defender APIs                     |
-| **SaaS Detection Agent**         | Identifies unapproved SaaS tools or risky usage patterns             |
-| **Risk Scoring Agent**           | Calculates risk score (0–100) + severity with detailed justification |
-| **Policy Mapping Agent**         | Maps events to enterprise security & compliance rules                |
-| **Automation Agent**             | Executes safe, reversible remediation actions                        |
-| **Human Security Analyst Agent** | Performs expert review for high-risk or ambiguous cases              |
+HERizon contains two distinct multi-agent subsystems, each with its own orchestration logic but unified under one platform.
 
-This pipeline enables **fast**, **automated**, and **safe** responses to potential security threats.
+1️⃣ Shadow IT Detection & Automated Remediation
 
----
+HERizon integrates with Microsoft Defender to detect unauthorized SaaS activity and automate secure remediation.
 
-### **2. Intelligent Access Management Assistant**
+Shadow IT Pipeline
+Agent	Purpose
+Defender Data Fetcher	Retrieves telemetry from Microsoft Defender
+SaaS Detection Agent	Detects unapproved SaaS usage patterns
+Risk Scoring Agent	Generates risk score (0–100) + severity justification
+Policy Mapping Agent	Maps activity to enterprise policies
+Automation Agent	Executes safe, reversible remediation
+Human Security Analyst Agent	Reviews high-risk or ambiguous events
+IT Shadow (Orchestrator)	Manages the complete Shadow IT workflow
 
-Employees request access through a **chatbot interface**, and HERizon automatically:
+This enables fast, automated, compliant responses to potential threats.
 
-* Verifies user identity and role
-* Checks RBAC, entitlement, and policy compliance
-* Auto-approves & provisions access when allowed
-* Routes exceptions for human approval
-* Generates audit logs
-* Sends real-time notifications
+2️⃣ Access Management Agent Suite (AMAS)
 
-This transforms access provisioning from **days to seconds** and reduces helpdesk load significantly.
+AMAS automates software access provisioning using 8 coordinated agents.
 
----
+AMAS Capabilities
 
-## 🧠 **Agent Architecture**
+Chatbot-based access requests
 
-HERizon uses Azure AI Foundry to orchestrate a chain of specialized agents.
+Role & policy-aware approval decisions
 
-| Agent Name                        | Purpose                                                             |
-| --------------------------------- | ------------------------------------------------------------------- |
-| **Defender Data Fetcher**         | Connects to Microsoft Defender and retrieves logs                   |
-| **SaaS Detector Agent**           | Detects Shadow IT and suspicious software activity                  |
-| **Risk Scoring Agent**            | Assigns risk score and category using policies + CVE data           |
-| **Policy Mapping Agent**          | Maps events to compliance rules and determines allowed/denied state |
-| **Automation Agent**              | Performs secure automated actions (revocations, alerts, approvals)  |
-| **Human Security Analyst Agent**  | Validates high-risk outputs and handles exceptions                  |
-| **IT Shadow (Main Orchestrator)** | Runs the full multi-agent workflow and coordinates execution        |
+License and seat management
 
----
+Duplicate-tool detection
 
-## 🏗️ **Architecture Overview**
+Immutable audit logs
 
-```
+Automated provisioning through Azure AD (Entra ID)
+
+Escalation for high-risk / policy exceptions
+
+AMAS Pipeline
+Agent	Responsibility
+Role Classification Agent	Maps job title + department → role category
+Risk Assessment Agent	Evaluates whether the tool fits the user's role; flags high-risk requests
+License Agent	Verifies seat availability
+Knowledge Agent	Checks for duplicate tools already accessible to the user
+Audit Agent	Writes immutable logs to CosmosDB
+Automation Agent	Grants/revokes access via Azure AD (Entra ID)
+Escalation Agent	Sends exceptions to managers via Logic Apps
+Main Orchestrator Agent	Connects all agents and controls full decision workflow
+🧠 Architectural Summary
+
+HERizon uses Azure AI Foundry for modular, extensible multi-agent orchestration.
+
+Shadow IT Workflow
 Microsoft Defender
         ↓
 Defender Data Fetcher
@@ -84,128 +87,164 @@ Automation Agent
 Human Security Analyst Agent
         ↓
 Final Output / Dashboard / UI
-```
 
----
-## **Live Demo**
-Link : https://drive.google.com/file/d/1_XTzabIZBNCke5YKwoxYT34qrLd4rfje/view?usp=sharing
----
-## 🧩 **Tech Stack**
+AMAS Workflow
+User Request
+        ↓
+Role Classification Agent
+        ↓
+Risk Assessment Agent
+        ↓
+License Agent
+        ↓
+Knowledge Agent
+        ↓
+Automation Agent
+        ↓
+Escalation Agent (if needed)
+        ↓
+Audit Agent
+        ↓
+Main Orchestrator Agent
+        ↓
+Final Access Decision / Provisioning
 
-* **Azure AI Foundry** (Multi-agent orchestration)
-* **Microsoft Defender for Cloud Apps**
-* **Python 3.10+**
-* **Flask** (local testing UI)
-* **Azure Identity SDK**
-* **Azure Agents SDK**
-* Optional: **Power BI** or **custom frontend** for dashboards
+🎥 Live Demo
 
----
+https://drive.google.com/file/d/1_XTzabIZBNCke5YKwoxYT34qrLd4rfje/view?usp=sharing
 
-## ⚙️ **Installation & Setup**
+🧩 Tech Stack
 
-### **1. Clone Repository**
+Azure AI Foundry
 
-```bash
+Microsoft Defender for Cloud Apps
+
+Python 3.10+
+
+Flask (local testing UI)
+
+Azure Identity SDK
+
+Azure Agents SDK
+
+Optional: Power BI / Custom frontend
+
+⚙️ Installation & Setup
+1️⃣ Shadow IT Detection Setup
+Clone Repository
 git clone https://github.com/<your-username>/HERizon.git
 cd HERizon
-```
 
-### **2. Install Dependencies**
-
-```bash
+Install Dependencies
 pip install -r requirements.txt
-```
 
-### **3. Configure Azure Credentials**
+Configure Azure Credentials
 
-HERizon uses:
+Add to .env:
 
-* `DefaultAzureCredential`
-* Azure AI Foundry project endpoint
-* Main orchestrator agent ID
-
-Add to `.env`:
-
-```
 AZURE_PROJECT_ENDPOINT=<your-endpoint>
 MAIN_AGENT_ID=<main-agent-id>
-```
 
-### **4. Run the Local UI**
-
-```bash
+Run Local UI
 python3 app.py
-```
 
-Open in browser:
 
-```
+Browser:
+
 http://127.0.0.1:5000
-```
 
-You can now chat with the main agent and watch the full workflow run in real time.
+2️⃣ AMAS Access Management Setup
 
----
+(Separate codebase / pipeline — no overlap with Shadow IT)
 
-## 📊 **Output Format**
+Clone Repository
+git clone https://github.com/<your-username>/HERizon-AMAS.git
+cd HERizon-AMAS
 
-HERizon produces **structured JSON**, ideal for:
+Install Dependencies
+pip install -r requirements.txt
 
-* Dashboards (Power BI, Grafana)
-* SIEM ingestion
-* Compliance reports
-* SOC workflows
+Configure Azure Credentials
 
-Sample output includes:
+Add to .env:
 
-* Detected SaaS apps
-* Risk score + category
-* Policies triggered
-* Actions performed
-* User access decisions
-* Escalations to human reviewers
+AZURE_PROJECT_ENDPOINT=<amas-endpoint>
+MAIN_AGENT_ID=<amas-main-agent-id>
 
----
+Run Local UI
+python3 app.py
 
-## 🔒 **Security & Safety**
 
-* Human-in-the-loop for high-risk cases
-* Transparent, explainable actions
-* Policy-aligned automation
-* Audit logs for every agent decision
-* No irreversible or destructive operations
+Browser:
 
----
+http://127.0.0.1:5001
 
-## 🌱 **Roadmap**
+📊 Output Format
 
-* Power BI / Grafana dashboard
-* Role-based UI
-* ServiceNow / Jira integration
-* Expansion to HR & Finance workflows
-* Multilingual support
-* Azure Lighthouse plugin
+HERizon produces structured JSON, suitable for:
 
----
+SIEM ingestion
 
-## 🤝 **Contributing**
+Power BI / Grafana dashboards
 
-Pull requests are welcome!
-Open an issue first to discuss proposed changes or features.
+Compliance & audit reports
 
----
+SOC workflows
 
-## 🎓 **Created By — HERizon Team**
+Includes:
 
-* **Seema Gupta**
-* **Anayna Singh**
-* **Sneha Joshi**
-* **Meghana Rabba**
-* **Deepali Budhiraja**
+Detected SaaS apps
 
----
+Risk score + rationale
 
-## 📄 **License**
+Policy outcomes
 
-MIT License 
+Actions taken
+
+Access approval decisions
+
+Escalations
+
+🔒 Security & Safety Controls
+
+Human-in-the-loop for high-risk actions
+
+Policy-aligned automation
+
+Immutable audit logs
+
+No destructive operations
+
+🌱 Roadmap
+
+Power BI / Grafana dashboards
+
+Role-based UI
+
+ServiceNow / Jira integration
+
+HR & Finance automation agents
+
+Multilingual support
+
+Azure Lighthouse support
+
+🤝 Contributing
+
+Pull requests welcome. Open an issue for discussion.
+
+🎓 HERizon Team
+
+Seema Gupta
+
+Anayna Singh
+
+Sneha Joshi
+
+Meghana Rabba
+
+Deepali Budhiraja
+
+📄 License
+
+MIT License

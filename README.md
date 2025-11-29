@@ -24,7 +24,7 @@ HERizon contains **two distinct multi-agent subsystems**, each with its own orch
 
 # 1️⃣ **Shadow IT Detection & Automated Remediation**
 
-HERizon integrates with **Microsoft Defender** to detect unauthorized SaaS activity and automate secure remediation.
+HERizon’s Shadow IT Detection & Automated Remediation system continuously monitors enterprise environments to identify unauthorized or risky SaaS applications. By combining real-time telemetry from Microsoft Defender with a multi-agent orchestration workflow, it automatically scores, maps, and remediates potential threats. High-risk or ambiguous cases are escalated to human analysts, ensuring that all actions are both fast and safe, while maintaining full compliance and auditability.
 
 ### **Shadow IT Pipeline**
 

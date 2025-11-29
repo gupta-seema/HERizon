@@ -150,24 +150,40 @@ cd HERizon
 
 ### Install Dependencies
 ```bash
-pip install -r requirements.txt
+pip install flask python-dotenv azure-identity azure-ai-projects
 ```
 
 ### Configure Azure Credentials
-Add to `.env`:
+
+#### 1. Authenticate with Azure
+```bash
+az login
 ```
-AZURE_PROJECT_ENDPOINT=<your-endpoint>
-MAIN_AGENT_ID=<main-agent-id>
+
+#### 2. Update orchestrator.py with your Azure credentials
+Edit `orchestrator.py` and update:
+```python
+endpoint="https://<your-project>.services.ai.azure.com/api/projects/<your-project-id>"
+MAIN_AGENT_ID = "<your-agent-id>"
 ```
+
+To find your credentials:
+1. Go to Azure AI Foundry (https://ai.azure.com)
+2. Navigate to your project
+3. Copy the **Project endpoint** URL
+4. Navigate to your Shadow IT orchestrator agent and copy its **Agent ID**
 
 ### Run Local UI
 ```bash
-python3 app.py
+python3 orchestrator.py
 ```
+
 Browser:
 ```
 http://127.0.0.1:5000
 ```
+
+**Note**: The orchestrator will fail at startup if Azure credentials are not properly configured. Ensure you've run `az login` and that the endpoint/agent ID are correct.
 
 ---
 
@@ -175,8 +191,8 @@ http://127.0.0.1:5000
 
 ### Clone Repository
 ```bash
-git clone https://github.com/<your-username>/HERizon-AMAS.git
-cd HERizon-AMAS
+git clone https://github.com/<your-username>/HERizon.git
+cd HERizon/azure_access_webapp/azure_access_webapp
 ```
 
 ### Install Dependencies
@@ -185,19 +201,26 @@ pip install -r requirements.txt
 ```
 
 ### Configure Azure Credentials
-Add to `.env`:
+Create or update `.env` file in `azure_access_webapp/azure_access_webapp/`:
 ```
-AZURE_PROJECT_ENDPOINT=<amas-endpoint>
-MAIN_AGENT_ID=<amas-main-agent-id>
+AZURE_PROJECT_ENDPOINT=https://<your-project>.services.ai.azure.com/api/projects/<your-project-id>
+MAIN_AGENT_ID=<your-agent-id>
 ```
+
+To find your credentials:
+1. Go to Azure AI Foundry (https://ai.azure.com)
+2. Navigate to your project
+3. Copy the **Project endpoint** and **Agent ID** from your agents
 
 ### Run Local UI
 ```bash
+cd azure_access_webapp/azure_access_webapp
 python3 app.py
 ```
+
 Browser:
 ```
-http://127.0.0.1:5001
+http://127.0.0.1:5000
 ```
 
 ---
